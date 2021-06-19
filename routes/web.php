@@ -23,6 +23,5 @@ Route::get('/services', [PageController::class, 'services'])->name('service');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
 Route::get('/contact-Us', [PageController::class, 'contactUs'])->name('contact');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');                          
+                        
