@@ -11,13 +11,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::middleware(['auth'])->group(function () {
         Route::resources([
-            'categories'=> categoryController::class,
+            'categories' => categoryController::class,
             'yogahealth' => HealthController::class,
-            
+
         ]);
-        
-
-        
     });
-
 });

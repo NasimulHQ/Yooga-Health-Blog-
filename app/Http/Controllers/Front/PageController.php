@@ -29,6 +29,7 @@ class PageController extends Controller
         $trainer = Trainer::select('tr_name', 'tr_title', 'tr_image')
             ->orderBy('id', 'asc')
             ->get();
+            
         return view('front-end.aboutUs', compact('trainer'));
     }
     public function services()

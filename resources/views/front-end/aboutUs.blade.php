@@ -23,12 +23,14 @@ About Us
                 <div class="team-item">
                     <div class="team-img">
                         <img src="{{url('uploads/trainers/'.$person->tr_image)}}" alt="Image">
-                        {{-- <div class="team-social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
+                        <div class="team-social">
+                            @if($person->twitter)
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            @endif
                             <a href=""><i class="fab fa-facebook-f"></i></a>
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
-                        </div> --}}
+                        </div>
                     </div>
                     <div class="team-text">
                         <h2>{{$person->tr_name}}</h2>

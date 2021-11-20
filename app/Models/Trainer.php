@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Trainer extends Model
 {
     use HasFactory;
-    protected $table = 'trainers';
-    protected $fillable = 
+
+    protected $appends = ['twitter'];
+    protected $fillable =
     [
         'tr_name',
         'tr_title',
         'tr_image',
     ];
+
+    public function getTwitterAttribute()
+    {
+        return $this->attributes['tr_name'] == 'Millie Harper' ? true : false;
+    }
 }

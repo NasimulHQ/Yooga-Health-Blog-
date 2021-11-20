@@ -18,7 +18,7 @@
 
     @include('front-end.layout.header')
      @yield('content')
-     @include('front-end.layout.footer')
+     @include('front-end.layout.footer', ['bgImage'=>'/front-end/img/footer-bg.png'])
      @include('front-end.layout.scripts')
 </body>
 

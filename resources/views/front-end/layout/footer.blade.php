@@ -1,6 +1,8 @@
 <!-- Footer Start -->
 <div class="footer wow fadeIn" data-wow-delay="0.3s">
-    <div class="container-fluid">
+    <div class="container-fluid" style="background: linear-gradient(rgba(52, 49, 72, .9), rgba(52, 49, 72, .9)), url({{ $bgImage }}); background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;">
         <div class="container">
             <div class="footer-info">
                 <a href="index.html" class="footer-logo">Y<span>oo</span>ga</a>
