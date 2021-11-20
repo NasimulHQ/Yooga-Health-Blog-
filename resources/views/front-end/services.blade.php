@@ -12,18 +12,23 @@ Service
             <h2>Yoga For Health</h2>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="flaticon-workout"></i>
+            @foreach ($yogahealth as $body)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="flaticon-workout"></i>
+                            {{-- <a href=""><i title="Edit" style="font-size: 15px" class="fas fa-edit"></i></a> --}}
+                        </div>
+                        <h3>{{$body->y_name}}</h3>
+                        <p>
+                            {{$body->y_details}}
+                        </p>
                     </div>
-                    <h3>Heal emotions</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                    </p>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            @endforeach
+
+
+            {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="service-item active">
                     <div class="service-icon">
                         <i class="flaticon-workout-1"></i>
@@ -77,7 +82,7 @@ Service
                         Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
                     </p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

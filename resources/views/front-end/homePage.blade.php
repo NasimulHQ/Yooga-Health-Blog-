@@ -6,13 +6,13 @@ Home Page
 <!-- Hero Start -->
 <div class="hero">
     <div class="container-fluid">
+        @foreach ($goodhealth as $practice)
         <div class="row align-items-center">
             <div class="col-sm-12 col-md-6">
                 <div class="hero-text">
-                    <h1>Yoga Practice For Good Health</h1>
+                    <h1>{{$practice->gh_title}}</h1>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasell nec pretum mi. Curabi ornare velit non. Aliqua
-                        metus tortor auctor quis sem.
+                        {{$practice->gh_details}}
                     </p>
                     <div class="hero-btn">
                         <a class="btn" href="">Join Now</a>
@@ -22,46 +22,18 @@ Home Page
             </div>
             <div class="col-sm-12 col-md-6 d-none d-md-block">
                 <div class="hero-image">
-                    <img src="/front-end/img/hero.png" alt="Hero Image">
+                    <img src="{{ url('uploads/goodhealths/' .$practice->gh_image)}}" alt="Hero Image">
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 <!-- Hero End -->
 
 
 <!-- About Start -->
-<div class="about wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6">
-                <div class="about-img">
-                    <img src="/front-end/img/about.png" alt="Image">
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-6">
-                <div class="section-header text-left">
-                    <p>Learn About Us</p>
-                    <h2>Welcome to Yooga</h2>
-                </div>
-                <div class="about-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
-                        viverra quis sem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
-                        viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus.
-                    </p>
-                    <a class="btn" href="">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<x-yoga-welcome />
 <!-- About End -->
 
 
@@ -151,6 +123,7 @@ Home Page
 <!-- Service End -->
 
 
+{{--
 <!-- Class Start -->
 <div class="class">
     <div class="container">
@@ -286,7 +259,7 @@ Home Page
         </div>
     </div>
 </div>
-<!-- Class End -->
+<!-- Class End --> --}}
 
 
 <!-- Discount Start -->
@@ -310,7 +283,7 @@ Home Page
 
 
 <!-- Price Start -->
-<div class="price">
+{{-- <div class="price">
     <div class="container">
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
             <p>Yoga Package</p>
@@ -403,7 +376,7 @@ Home Page
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Price End -->
 
 
@@ -415,58 +388,20 @@ Home Page
             <h2>Our Client Say!</h2>
         </div>
         <div class="owl-carousel testimonials-carousel">
+            @foreach ($client as $say)
             <div class="testimonial-item">
                 <div class="testimonial-img">
-                    <img src="/front-end/img/testimonial-1.jpg" alt="Image">
+                    <img src="{{ url('uploads/clients/'.$say->cl_image)}}" alt="Image">
                 </div>
                 <div class="testimonial-text">
                     <p>
-                        Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis
-                        suscip justo dictum.
+                        {{$say->cl_details}}
                     </p>
-                    <h3>Customer Name</h3>
-                    <h4>Profession</h4>
+                    <h3>{{$say->cl_name}}</h3>
+                    <h4>{{$say->cl_title}}</h4>
                 </div>
             </div>
-            <div class="testimonial-item">
-                <div class="testimonial-img">
-                    <img src="/front-end/img/testimonial-2.jpg" alt="Image">
-                </div>
-                <div class="testimonial-text">
-                    <p>
-                        Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis
-                        suscip justo dictum.
-                    </p>
-                    <h3>Customer Name</h3>
-                    <h4>Profession</h4>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-img">
-                    <img src="/front-end/img/testimonial-3.jpg" alt="Image">
-                </div>
-                <div class="testimonial-text">
-                    <p>
-                        Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis
-                        suscip justo dictum.
-                    </p>
-                    <h3>Customer Name</h3>
-                    <h4>Profession</h4>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-img">
-                    <img src="/front-end/img/testimonial-4.jpg" alt="Image">
-                </div>
-                <div class="testimonial-text">
-                    <p>
-                        Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis
-                        suscip justo dictum.
-                    </p>
-                    <h3>Customer Name</h3>
-                    <h4>Profession</h4>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

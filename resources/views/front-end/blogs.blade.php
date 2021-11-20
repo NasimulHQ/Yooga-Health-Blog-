@@ -14,27 +14,30 @@ blogs
                 <h2>Latest Yoga Articles</h2>
             </div>
             <div class="row blog-page">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="/front-end/img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Lorem ipsum dolor</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-list-alt"></i>Body Fitness</p>
-                                <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                <p><i class="far fa-comments"></i>5</p>
+                @foreach ($article as $yoga)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{{ url('uploads/articles/'.$yoga->ar_image)}}" alt="Blog img">
                             </div>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
-                                liqum metus tortor
-                            </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <div class="blog-text">
+                                <h2>{{ $yoga->ar_name }}</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-list-alt"></i>Body Fitness</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>5</p>
+                                </div>
+                                <p>
+                                    {{ $yoga->ar_details }}
+                                </p>
+                                <a class="btn" href="{{ route('blogdetails')}}">Read More <i class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                @endforeach
+                
+
+                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="blog-item">
                         <div class="blog-img">
                             <img src="/front-end/img/blog-2.jpg" alt="Blog">
@@ -133,7 +136,7 @@ blogs
                             <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-12">

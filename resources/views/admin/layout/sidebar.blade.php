@@ -39,6 +39,18 @@
                     <li><a href="/admin-dashboard/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                 </ul>
             </li>
+
+            <!-- Yoga start -->
+            <li><a href="{{ route('yogahealth.index') }}"><i class="fa fa-circle-o text-red"></i> <span>Yoga Health</span></a></li>
+            <li><a href="{{ url('goodhealths') }}"><i class="fa fa-circle-o text-red"></i> <span>Yooga For Good Health</span></a></li>
+            <li><a href="{{ url('welcomes') }}"><i class="fa fa-circle-o text-red"></i> <span>Welcome Yooga</span></a></li>
+            <li><a href="{{ url('yogahealths') }}"><i class="fa fa-circle-o text-red"></i> <span>Yoga For Health</span></a></li>
+            <li><a href="{{ url('trainers') }}"><i class="fa fa-circle-o text-red"></i> <span>Expert Yoga Trainer</span></a></li>
+            <li><a href="{{ url('clients') }}"><i class="fa fa-circle-o text-red"></i> <span>Our Clients</span></a></li>
+            <li><a href="{{ url('articles') }}"><i class="fa fa-circle-o text-red"></i> <span>Yoga Articles</span></a></li> 
+            <li><a href="{{route('categories.index') }}"><i class="fa fa-circle-o text-red"></i> <span>Categories</span></a></li>
+
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>

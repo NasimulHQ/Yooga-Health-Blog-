@@ -15,3 +15,4 @@
     $('.sidebar-menu').tree()
   })
 </script>
+@stack('js')
