@@ -15,7 +15,7 @@ class YogaHealthController extends Controller
     public function index()
     {
         $yogahealth = YogaHealth::all();
-        return view('yogahealth.index',compact('yogahealth'));
+        return view('yogahealth.index', compact('yogahealth'));
     }
 
     /**
@@ -36,16 +36,20 @@ class YogaHealthController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, 
-        [
-            'y_name'    => 'required|min:3|max:191|string',
-            'y_details' => 'required|min:3|max:191|string',
-        ]);
+        $this->validate(
+            $request,
+            [
+                'y_name'    => 'required|min:3|max:191|string',
+                'y_details' => 'required|min:3|max:191|string',
+                'icon' => 'required|min:3|max:191|string',
+            ]
+        );
         $yogahealth = new YogaHealth();
         $yogahealth->y_name = $request->input('y_name');
         $yogahealth->y_details = $request->input('y_details');
+        $yogahealth->icon = $request->icon;
         $yogahealth->save();
-        return redirect()->back()->with('status', 'Yoga save successfully done');
+        return redirect()->to( url('yogahealths') )->with('status', 'Yoga save successfully done');
     }
 
     /**
@@ -85,13 +89,15 @@ class YogaHealthController extends Controller
             [
                 'y_name'    => 'required|min:3|max:191|string',
                 'y_details' => 'required|min:3|max:191|string',
+                'icon' => 'required|min:3|max:191|string',
             ]
         );
         $yogahealth = YogaHealth::find($id);
         $yogahealth->y_name = $request->input('y_name');
         $yogahealth->y_details = $request->input('y_details');
+        $yogahealth->icon = $request->icon;
         $yogahealth->update();
-        return redirect()->back()->with('status', 'Yoga updated successfully done');
+        return redirect()->to(url('yogahealths'))->with('status', 'Yoga updated successfully done');
     }
 
     /**
@@ -104,6 +110,6 @@ class YogaHealthController extends Controller
     {
         $yogahealth = YogaHealth::find($id);
         $yogahealth->delete();
-        return redirect()->back()->with('status', 'Yoga delete successfully done');
+        return redirect()->to(url('yogahealths'))->with('status', 'Yoga delete successfully done');
     }
 }

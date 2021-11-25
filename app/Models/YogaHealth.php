@@ -9,9 +9,10 @@ class YogaHealth extends Model
 {
     use HasFactory;
     protected $table = 'yoga_healths';
-    protected $fillable = 
+    protected $fillable =
     [
         'y_name',
         'y_details',
+        'icon'
     ];
 }

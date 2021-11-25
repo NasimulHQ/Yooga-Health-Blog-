@@ -8,7 +8,7 @@ Yoga For Health
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-           Yoga For Health
+            Yoga For Health
             <a href="{{ url('yogahealths') }}" class="btn btn-info">Back</a>
         </h1>
         <ol class="breadcrumb">
@@ -35,11 +35,19 @@ Yoga For Health
                         @error('y_name')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        </div>
-                    
+                    </div>
+                    <div class="form-group">
+                        <label for="">YogaHealth Icon:</label>
+                        <input type="text" class="form-control" name="icon" placeholder="Enter The YogaHealth Icon">
+                        @error('icon')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <label for="">YogaHealth Details:</label>
-                        <input type="text" class="form-control" name="y_details" placeholder="Enter Ther YogaHealth Details">
+                        <input type="text" class="form-control" name="y_details"
+                            placeholder="Enter Ther YogaHealth Details">
                         @error('y_details')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -48,13 +56,13 @@ Yoga For Health
                         <button type="submit" class="btn btn-success">Save Yoga</button>
                     </div>
                 </form>
-                </div>
             </div>
         </div>
-        <!-- /.box -->
+</div>
+<!-- /.box -->
 
-    </section>
-    <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 @endsection

@@ -26,25 +26,19 @@ class PageController extends Controller
     }
     public function aboutUs()
     {
-        $trainer = Trainer::select('tr_name', 'tr_title', 'tr_image')
-            ->orderBy('id', 'asc')
-            ->get();
-            
-        return view('front-end.aboutUs', compact('trainer'));
+        // Component use yoga-welcome 
+        // Component use yoga-trainer 
+        return view('front-end.aboutUs');
     }
     public function services()
     {
-        $yogahealth = YogaHealth::select('y_name', 'y_details')
-            ->orderBy('id', 'asc')
-            ->get();
-        return view('front-end.services', compact('yogahealth'));
+        // component use service-health
+        return view('front-end.services');
     }
     public function blogs()
     {
-        $article = Article::select('ar_image', 'ar_name', 'ar_details')
-            ->orderBy('id', 'asc')
-            ->get();
-        return view('front-end.blogs', compact('article'));
+        // component use blog-article
+        return view('front-end.blogs');
     }
     public function blogCategory($slug)
     {

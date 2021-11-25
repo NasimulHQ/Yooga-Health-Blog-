@@ -8,7 +8,7 @@ Yoga For Health
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-           Yoga For Health
+            Yoga For Health
             <a href="{{ url('add-yogahealth') }}" class="btn btn-primary">Create</a>
         </h1>
         <ol class="breadcrumb">
@@ -32,6 +32,7 @@ Yoga For Health
                         <th>SL#</th>
                         <th>YogaHealth Name</th>
                         <th>YogaHealth Details</th>
+                        <th>YogaHealth Icon</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@ Yoga For Health
                         <td>{{$loop->iteration}}</td>
                         <td>{{$body->y_name}}</td>
                         <td>{{$body->y_details}}</td>
+                        <td>{{$body->icon}}</td>
                         <td>
                             <a href="{{ url('edit-yogahealth/'.$body->id) }}" class="btn btn-primary">Edit</a>
                             <a href="{{ url('delete-yogahealth/'.$body->id) }}" class="btn btn-danger">Delete</a>

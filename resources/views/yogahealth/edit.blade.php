@@ -27,20 +27,31 @@ Yoga For Health
         <!-- Default box -->
         <div class="box">
             <div class="box-body">
-                <form action="{{ url('update-yogahealth/'.$yogahealth->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('update-yogahealth/'.$yogahealth->id) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">
                         <label for="">YogaHealth Name:</label>
-                        <input type="text" class="form-control" name="y_name" placeholder="Enter The YogaHealth Name" value="{{ $yogahealth->y_name }}">
+                        <input type="text" class="form-control" name="y_name" placeholder="Enter The YogaHealth Name"
+                            value="{{ $yogahealth->y_name }}">
                         @error('y_name')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">YogaHealth Icon:</label>
+                        <input type="text" value="{{ $yogahealth->icon }}" class="form-control" name="icon"
+                            placeholder="Enter The YogaHealth Icon">
+                        @error('icon')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
             </div>
             <div class="form-group">
                 <label for="">YogaHealth Details:</label>
-                <input type="text" class="form-control" name="y_details" placeholder="Enter Ther YogaHealth Details" value="{{ $yogahealth->y_details }}">
+                <input type="text" class="form-control" name="y_details" placeholder="Enter Ther YogaHealth Details"
+                    value="{{ $yogahealth->y_details }}">
                 @error('y_details')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
