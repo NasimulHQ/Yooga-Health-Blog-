@@ -46,7 +46,6 @@ Yoga For Health
                         <td>
                             <a href="{{ url('edit-yogahealth/'.$body->id) }}" class="btn btn-primary">Edit</a>
                             <a href="{{ url('delete-yogahealth/'.$body->id) }}" class="btn btn-danger">Delete</a>
-                            {{-- {{ url('delete-trainer/'.$person->id) }} --}}
                         </td>
                     </tr>
                     @endforeach

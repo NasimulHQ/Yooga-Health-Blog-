@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnyQueryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Front\PageController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\YogaHealthController;
 use Illuminate\Support\Facades\Route;
+use Mockery\Matcher\Any;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,4 +87,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edit-yogahealth/{id}', [YogaHealthController::class, 'edit']);
     Route::put('update-yogahealth/{id}', [YogaHealthController::class, 'update']);
     Route::get('delete-yogahealth/{id}', [YogaHealthController::class, 'destroy']);
+
+    // Contact us Any Query
+    Route::get('anyquerys', [AnyQueryController::class, 'index']);
+    Route::get('add-anyquery', [AnyQueryController::class, 'create']);
+    Route::post('add-anyquery', [AnyQueryController::class, 'store']);
+    Route::get('edit-anyquery/{id}', [AnyQueryController::class, 'edit']);
+    Route::put('update-anyquery/{id}', [AnyQueryController::class, 'update']);
+    Route::delete('delete-anyquery/{id}', [AnyQueryController::class, 'destroy']);
 });

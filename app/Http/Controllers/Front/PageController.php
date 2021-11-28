@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\AnyQuery;
 use App\Models\Article;
 use App\Models\category;
 use App\Models\Client;
@@ -46,7 +47,10 @@ class PageController extends Controller
     }
     public function contactUs()
     {
-        return view('front-end.contactUs');
+        $anyquery = AnyQuery::select('location', 'phone', 'email')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.contactUs', compact('anyquery'));
     }
     public function blogDetails()
     {
