@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnyQueryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\GoodHealthController;
 use App\Http\Controllers\TrainerController;
@@ -95,4 +96,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edit-anyquery/{id}', [AnyQueryController::class, 'edit']);
     Route::put('update-anyquery/{id}', [AnyQueryController::class, 'update']);
     Route::delete('delete-anyquery/{id}', [AnyQueryController::class, 'destroy']);
+
+    
 });
+// Contact us form
+Route::get('contact-us', [ContactController::class, 'Contact']);
+Route::post('send-message', [ContactController::class, 'sendEmail']);
+
